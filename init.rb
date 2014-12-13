@@ -1,8 +1,7 @@
 Redmine::Plugin.register :plantuml_macro do
-  name 'Plantuml Macro plugin'
-  author 'Author name'
-  description 'This is a plugin for Redmine'
+  name 'PlantUML Macro plugin'
+  author 'Denis Nelubin'
+  description 'This is a plugin for Redmine to convert PlantUML text into link to images on PlantUML server'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  author_url 'http://google.com/+DenisNelubin'
 end

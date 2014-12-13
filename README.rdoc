@@ -1,3 +1,9 @@
-= plantuml_macro
+= PlantUML Macro Plugin
 
-Description goes here
+This is plugin for Redmine.
+
+This plugin adds a <tt>plantuml</tt> macro to wiki pages or issue description.
+The content of the macro in {PlantUML}[http://plantuml.com/] language is converted into the URL to
+PlantUML {server}[http://plantuml.com/server.html] and this URL is inserted into wiki page
+as an external image.
+
