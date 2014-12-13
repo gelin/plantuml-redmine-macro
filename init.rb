@@ -8,6 +8,9 @@ Redmine::Plugin.register :plantuml_macro do
   url 'https://bitbucket.org/gelin/plantuml-redmine-macro'
   author_url 'http://google.com/+DenisNelubin'
 
+  settings :default => { 'plantuml_url' => 'http://plantuml.com/plantuml/' },
+           :partial => 'settings/plantuml_macro_settings'
+
   Redmine::WikiFormatting::Macros.register do
 
     desc "Converts PlantUML text into link to the image on PlantUML server. Example:\n\n" +
