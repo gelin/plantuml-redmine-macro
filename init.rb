@@ -1,4 +1,5 @@
 require 'redmine'
+require 'uri'
 
 Redmine::Plugin.register :plantuml_macro do
   name 'PlantUML Macro plugin'
@@ -18,10 +19,9 @@ Redmine::Plugin.register :plantuml_macro do
            "  Bob -> Alice : hello\n" +
            "}}"
     macro :plantuml do |obj, args, text|
-      h("Hello world! Object: #{obj.class.name}, " +
-            (args.empty? ? "Called with no argument" : "Arguments: #{args.join(', ')}") +
-            " and " + (text.present? ? "a #{text.size} bytes long block of text." : "no block of text.")
-      )
+      url = URI.join(Setting.plugin_plantuml_macro['plantuml_url'], 'png/')
+      encoded = URI.encode(text)
+      image_tag(URI.join(url, encoded).to_s)
     end
 
   end
