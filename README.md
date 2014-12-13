@@ -1,7 +1,7 @@
 PlantUML Macro Plugin
 =====================
 
-This is plugin for Redmine.
+This is plugin for [Redmine](http://www.redmine.org/).
 
 This plugin adds a `plantuml` macro to wiki pages or issue description.
 The content of the macro in [PlantUML](http://plantuml.com/) language is converted into the URL to

@@ -20,7 +20,7 @@ Redmine::Plugin.register :plantuml_macro do
            "  Bob -> Alice : hello\n" +
            "}}"
     macro :plantuml do |obj, args, text|
-      url = URI.join(Setting.plugin_plantuml_macro['plantuml_url'], 'png/')
+      url = URI.join(Setting.plugin_plantuml_macro['plantuml_url'] + '/', 'png/')
       encoded = PlantUML.encode(text)
       image_tag(URI.join(url, encoded).to_s)
     end
