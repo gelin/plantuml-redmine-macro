@@ -1,6 +1,6 @@
 require 'redmine'
 require 'uri'
-require 'plantuml'
+require File.expand_path('lib/plantuml', __dir__)
 
 Redmine::Plugin.register :plantuml_macro do
   name 'PlantUML Macro plugin'
@@ -10,7 +10,7 @@ Redmine::Plugin.register :plantuml_macro do
   url 'https://bitbucket.org/gelin/plantuml-redmine-macro'
   author_url 'http://google.com/+DenisNelubin'
 
-  settings :default => { 'plantuml_url' => 'http://plantuml.com/plantuml/' },
+  settings :default => { 'plantuml_url' => 'https://www.plantuml.com/plantuml' },
            :partial => 'settings/plantuml_macro_settings'
 
   Redmine::WikiFormatting::Macros.register do
@@ -21,7 +21,7 @@ Redmine::Plugin.register :plantuml_macro do
            "}}"
     macro :plantuml do |obj, args, text|
       url = URI.join(Setting.plugin_plantuml_macro['plantuml_url'] + '/', 'png/')
-      encoded = PlantUML.encode(text)
+      encoded = Plantuml.encode(text)
       image_tag(URI.join(url, encoded).to_s)
     end
 

@@ -1,6 +1,6 @@
 require 'zlib'
 
-module PlantUML
+module Plantuml
 
   # converted from here https://github.com/dougn/python-plantuml/blob/master/plantuml.py
 
